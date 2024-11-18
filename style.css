@@ -1,0 +1,319 @@
+body {
+    font-family: sans-serif;
+}
+
+.cont {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 4rem;
+    gap: 45px;
+}
+
+body {
+    font-family: Helvetica;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.site-header {
+    border-bottom: 1px solid #ccc;
+    padding: .5em 1em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.site-identity h1 {
+    font-size: 1.5em;
+    margin: .6em 0;
+    display: inline-block;
+}
+
+
+.site-navigation ul,
+.site-navigation li {
+    margin: 0;
+    padding: 0;
+}
+
+.site-navigation li {
+    display: inline-block;
+    margin: 1.4em 1em 1em 1em;
+    position: relative;
+}
+
+.site-navigation li::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    background: #000;
+    height: 2px;
+    bottom: -1px;
+    left: 0;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.site-navigation li:hover::after {
+    opacity: 100;
+}
+
+main {
+    width: 70%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+}
+
+@media screen and (max-width:1000px) {
+    main {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .cont {
+        padding-top: 2rem;
+    }
+}
+
+@media screen and (max-width:700px) {
+    main {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .site-header {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.8rem;
+    }
+
+    .cont {
+        padding-top: 1rem;
+    }
+}
+
+@media screen and (max-width:400px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    .site-header {
+        font-size: 0.6rem;
+    }
+
+    footer h2 {
+        font-size: 0.6rem;
+    }
+}
+
+
+
+
+.card {
+    box-shadow: 0px 0px 4px 0px #cccccc;
+    padding: 10px;
+    padding-bottom: 15px;
+    border-radius: 16px;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 6px;
+}
+
+.card a {
+    color: #435850;
+    text-decoration: none;
+}
+
+.card h3 {
+    color: #333333;
+    height: 45px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.card .img {
+    position: relative;
+    transition: 0.5s;
+    height: max-content;
+
+}
+
+.card .img .ani {
+    opacity: 0;
+    transition: 0.5s;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+}
+
+.card .img:hover .ani {
+    opacity: 50%;
+}
+
+.card .img span {
+    box-sizing: border-box;
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 12px;
+    transition: 0.5s;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fdfdfd;
+}
+
+.card .img:hover span {
+
+    opacity: 100%;
+
+}
+
+#then {
+    display: flex;
+    gap: 15px;
+}
+
+#then button {
+    all: unset;
+
+    padding-block: 6px;
+    padding-inline: 18px;
+    border: 1px solid #000;
+    border-radius: 16px;
+    color: #000;
+    transition: .3s;
+
+}
+/* استایل لودینگ */
+.skeleton-loader {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    width: 70%;
+    padding: 20px;
+  }
+  
+  /* ساختار کارت لودینگ */
+  .card.skeleton {
+    width: 200px;
+    height: 350px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 10px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  /* انیمیشن گرادیانت برای لودینگ */
+  .skeleton-img,
+  .skeleton-text {
+    background: linear-gradient(90deg, #e0e0e0 25%, #f7f7f7 50%, #e0e0e0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite ease-in-out;
+    border-radius: 5px;
+  }
+  
+  /* سایز‌ها و موقعیت‌ها برای بخش‌های مختلف لودینگ */
+  .skeleton-img {
+    width: 100%;
+    height: 150px;
+    margin-bottom: 15px;
+  }
+  
+  .skeleton-text {
+    height: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .price.skeleton-text {
+    width: 50%;
+    height: 20px;
+    margin-top: auto;
+  }
+  
+  @keyframes loading {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+  
+
+#then button:hover {
+    color: #fdfdfd;
+
+    background-color: #000;
+}
+
+footer {
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid #ccc;
+    margin-top: 3rem;
+    color: #cccccc;
+    font-size: 0.5rem;
+    font-weight: 400;
+
+}
+
+footer h2 {
+    font-weight: 100;
+}
+/* انیمیشن محو شدن */
+@keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  /* انیمیشن نمایان شدن */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /* کلاس برای زمانی که باید محو شویم */
+  .fade-out {
+    animation: fadeOut 0.5s ease-out forwards;
+  }
+  
+  /* کلاس برای زمانی که باید نمایش داده شویم */
+  .fade-in {
+    animation: fadeIn 0.5s ease-in forwards;
+  }
+  
