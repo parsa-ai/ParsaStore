@@ -13,7 +13,7 @@ const generateCard = (product) => {
         <div class="card">
             <a href="${imgSrc}" target="_blank">
                 <div class="img">
-                    <img src="${imgSrc}" alt="${product.title}" loading="lazy" onerror="this.onerror=null;this.src='./Parler_logo.png';">
+                    <img src="${imgSrc}" alt="${product.title}"  onerror="this.onerror=null;this.src='./Parler_logo.png';">
                     <div class="ani"></div>
                     <span>${product.title}</span>
                 </div>
