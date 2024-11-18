@@ -1,17 +1,17 @@
 let start = 0;
 let end = 12;
-let products = [];  // محصولات را در اینجا ذخیره می‌کنیم
+let products = [];
 
 const fetchProducts = async () => {
     const response = await fetch("https://api.escuelajs.co/api/v1/products");
-    products = await response.json();  // داده‌ها را یک بار بارگذاری می‌کنیم
+    products = await response.json(); 
 };
 
 const generateCard = (product) => {
     const imgSrc = product.images[0] || './Parler_logo.png';
     return `
         <div class="card">
-            <a href="${imgSrc}">
+            <a href="${imgSrc}" target="_blank">
                 <div class="img">
                     <img src="${imgSrc}" alt="${product.title}" loading="lazy" onerror="this.onerror=null;this.src='./Parler_logo.png';">
                     <div class="ani"></div>
@@ -35,10 +35,9 @@ const updateCards = () => {
         card.classList.add('fade-out');
     });
     setTimeout(() => {
-        const visibleProducts = products.slice(start, end);  // فقط محصولات لازم را می‌بینیم
-        main.innerHTML = visibleProducts.map(generateCard).join('');  // از join به جای += استفاده می‌کنیم برای کارایی بهتر
+        const visibleProducts = products.slice(start, end);
+        main.innerHTML = visibleProducts.map(generateCard).join(''); 
 
-        // اضافه کردن انیمیشن fadeIn به محصولات جدید
         const newCards = main.querySelectorAll(".card");
         newCards.forEach(card => {
             card.classList.add('fade-in');
@@ -57,6 +56,7 @@ const next = () => {
     }
 };
 
+
 const previous = () => {
     if (start > 0) {
         end = start;
@@ -70,4 +70,4 @@ const initialize = async () => {
     updateCards();
 };
 
-initialize();  // این تابع را برای بارگذاری اولیه فراخوانی می‌کنیم
+initialize(); 
